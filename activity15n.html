@@ -1,0 +1,131 @@
+<html><head><title>Form - Text Input</title>
+<link href="activity15.css" rel="stylesheet">
+<script>
+function validateForm() {
+
+  // to validate text - do not allow empty
+  let x = document.MyFirstForm.username.value;
+  if (x == "") {
+    alert("Please provide your Name!");
+    return false;
+  }
+ 
+  // to validate text - only allow alphabet characters
+  var letters = /^[A-Za-z]/;
+  if (!x.match(letters))
+  {
+    alert("Please input alphabet characters.");
+    return false;
+  }
+
+  // to validate radio button - must select
+  if ((MyFirstForm.gender[0].checked == false) && (MyFirstForm.gender[1].checked == false)) 
+  {
+    alert ("Please choose Gender: Male or Female"); 
+    return false;
+  }
+
+  // to validate checkbox - must tick
+  var group = document.MyFirstForm.fav_sub;
+  for (var i=0; i<group.length; i++) 
+  {
+    if (group[i].checked)
+    return false;
+  }
+    if (i==group.length)
+  {
+    alert("No Checkbox is checked");
+    return false;
+  }
+
+}
+</script>
+</head>
+<body topmargin=50>
+<center>
+<form name=MyFirstForm onsubmit="return validateForm()" >  
+<br>
+
+<table>
+<caption>Personal details:</caption>
+<tr>
+<td width='40%' class='title'>
+Name: 
+</td>
+<td>
+<input type=text name=username> 
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Gender: 
+</td>
+<td>
+<input type = radio name = gender value = Male> Male
+<input type = radio name = gender value = Female> Female
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Choose your favorite subjects:
+</td>
+<td>
+<input type=checkbox name=fav_sub value=DCS4103>DCS4103
+<input type=checkbox name=fav_sub value=DCS3003>DCS3003
+<input type=checkbox name=fav_sub value=MST1003>MST1003
+<input type=checkbox name=fav_sub value=MST2003>MST2003
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Date of birth:
+</td>
+<td>
+<input type=date name=dob>
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Email address: 
+</td>
+<td>
+<input type=email name=useremail> 
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Login password:
+</td>
+<td>
+<input type=password name=loginpass minlength=4 maxlength=4>
+</td>
+</tr>
+
+<tr>
+<td class='title'>
+Course:
+</td>
+<td>
+<select>
+<option value="0">- List of Courses -</option>
+<option value="DCS" selected>Diploma In Computer Science</option>
+<option value="DIB">Diploma In Bussiness</option>
+<option value="DAS">Diploma In Airline Services</option>
+</select>
+</td>
+</tr>
+
+</table>
+<br><br>
+<input type=submit value=Submit>
+<input type=reset value=Reset>
+<br><br>
+</form>
+</center>
+</body>
+</html>
