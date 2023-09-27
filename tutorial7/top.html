@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Tutorial Lesson 7</title>
+<link rel=icon href=logo.png type=image/png>
+<meta name=viewport content=width=device-width, initial-scale=1.0>
+
+<style>
+#blink {
+font-size: 30px;
+font-weight: bold;
+font-family: sans-serif;
+text-align:center;
+vertical-align: middle;
+}
+</style>
+
+</head>
+<body>
+<p id="blink">Tutorial Lesson 7</p>
+      
+    <script type="text/javascript">
+        var blink = 
+            document.getElementById('blink');
+            setInterval(function () {
+            blink.style.opacity = 
+            (blink.style.opacity == 0 ? 1 : 0);
+            }, 700); 
+    </script>
+
+</body></html>
